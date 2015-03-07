@@ -4,12 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself. 
-
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+Ce site me sert d'aide mémoire en ligne pour les différentes procédures que je fais. Cela peut être sur du Linux, de la programmation (principalement C, Cpp et Python), de l'électronique (Arduino, PIC, ARM), de la robotique (ROS) ou autre...
