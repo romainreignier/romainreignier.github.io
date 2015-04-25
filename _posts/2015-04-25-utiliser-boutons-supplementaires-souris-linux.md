@@ -1,6 +1,11 @@
 ---
 layout: post
-title : Utiliser les boutons supplémentaires de sa souris sous Linux 
+title : "Utiliser les boutons supplémentaires de sa souris sous Linux"
+date:   2015-04-25 19:00:00
+categories: linux
+tags:
+- linux
+- archlinux
 ---
 
 ## Contexte

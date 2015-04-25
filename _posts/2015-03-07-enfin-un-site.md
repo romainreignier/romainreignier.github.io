@@ -1,6 +1,9 @@
 ---
 layout: post
-title: Enfin un site ! 
+title: "Enfin un site !"
+categories: jekyll
+tags:
+- jekyll
 ---
 
 Cela fait longtemps que je voulais me (re)faire un site web. C'est maintenant chose faite avec ma *Github Page* et le moteur [Jekyll](http://jekyllrb.com).
