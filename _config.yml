@@ -1,6 +1,6 @@
 # Site settings
 title: Notes personnelles de Goligo
-#email: rom.reignier@gmail.com
+#email: 
 description: > # this means to ignore newlines until "baseurl:"
     Site personnel me servant de pense-bête en ligne à propos de mes bidouillages électroniques et informatques sur Linux (surtout Archlinux), ROS, Raspberry Pi, Odroid, Arduino, dsPIC, ARM...
 baseurl: "" # the subpath of your site, e.g. /blog/
