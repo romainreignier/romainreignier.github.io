@@ -14,7 +14,7 @@ tags :
 
 ## Introduction
 
-![Logo OpenCV]({{ site.baseurl }}/images/logo_opencv.png "Logo OpenCV")
+[![Logo OpenCV]({{ site.baseurl }}/images/logo_opencv.png "Logo OpenCV")](http://opencv.org/)
 
 [OpenCV](http://opencv.org/) est une bibliothèque open-source de traitement d'image.
 
@@ -26,7 +26,7 @@ L'objectif est alors de compiler OpenCV 3 Béta avec le support de TBB et des in
 
 ## Raspbian
 
-![Logo Raspbian]({{ site.baseurl }}/images/logo_raspbian.png "Logo Raspbian")
+[![Logo Raspbian]({{ site.baseurl }}/images/logo_raspbian.png "Logo Raspbian")](http://www.raspbian.org/)
 
 L'OS par défaut des Raspberry Pi est [Raspbian](http://www.raspbian.org/). Raspbian est basé sur Debian Wheezie et sur cette distribution, seul OpenCV 2.3 est disponible dans les dépôt avec des paquets comme `libopencv-core2.3`. Cette version pose problème car ne fonctionne pas avec le module caméra [Camera Module](https://www.raspberrypi.org/products/camera-module/) en utilisant le driver `v4l2` qui est façonb la plus standart d'accéder à la webcam dans Linux. En effet, le module du noyau `bcm2835-v4l2` permet de faire apparaître le module caméra dans `/dev/video0`, afin qu'OpenCV puisse y accéder.
 
@@ -34,7 +34,7 @@ D'après des témoignages sur le forums, cela fonctionne avec les dernières ver
 
 ## Ubuntu
 
-![Logo Ubuntu]({{ site.baseurl }}/images/logo_ubuntu.png "Logo Ubuntu")
+[![Logo Ubuntu]({{ site.baseurl }}/images/logo_ubuntu.png "Logo Ubuntu")](https://wiki.ubuntu.com/ARM/RaspberryPi)
 
 Il existe une [version de Ubuntu 14.04 LTS disponible](https://wiki.ubuntu.com/ARM/RaspberryPi) pour le Raspberry Pi 2. L'avantage d'Ubuntu, c'st qu'on peut facilement y installer [ROS](http://www.ros.org/) si besoin.
 
@@ -50,7 +50,7 @@ Pour ne pas me prendre la tête plus longtemps, je décide d'utiliser une distib
 
 ## ArchLinux
 
-![Logo Archlinux ARM]({{ site.baseurl }}/images/logo_alarm.png "Logo Archlinux ARM")
+[![Logo Archlinux ARM]({{ site.baseurl }}/images/logo_alarm.png "Logo Archlinux ARM")](http://archlinuxarm.org/)
 
 OpenCV 3 est disponible sur [AUR](https://aur.archlinux.org/) sous le nom de [opencv-git](https://aur.archlinux.org/packages/opencv-git/).
 
@@ -165,7 +165,7 @@ Avec l'utilisateur `root` et le mot de passe `root`, on peut se connecter, même
 
 ### Installation d'un environnement graphique
 
-![Logo i3]({{ site.baseurl }}/images/logo_i3.png "Logo i3")
+[![Logo i3]({{ site.baseurl }}/images/logo_i3.png "Logo i3")](http://i3wm.org/)
 
 - Installation d'utilitaires pour le son :
 
@@ -211,7 +211,7 @@ Et ajouter les lignes suivantes (ou décommenter dans le fichier) :
 
 ### Compilation de TBB
 
-![Logo TBB]({{ site.baseurl }}/images/logo_tbb.png "Logo TBB")
+[![Logo TBB]({{ site.baseurl }}/images/logo_tbb.png "Logo TBB")](https://www.threadingbuildingblocks.org/)
 
 *Remarque : dans la philosophie Archlinux, il faudrait créer un PKGBUILD pour réaliser les actions suivantes, mais je ne sais pas faire.*
 
