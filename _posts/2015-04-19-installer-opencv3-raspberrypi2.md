@@ -204,7 +204,7 @@ Pour cela, éditer le fichier `/etc/ssh/sshd_config` :
 
     $ sudo vim /etc/ssh/sshd_config
 
-Et ajouter les lignes suivantes (ou décommenter dans le fichier) :
+Et ajouter les lignes suivantes (ou dé-commenter dans le fichier) :
 
     X11Forwarding yes
     X11UseLocalhost yes
@@ -213,8 +213,74 @@ Et ajouter les lignes suivantes (ou décommenter dans le fichier) :
 
 [![Logo TBB]({{ site.baseurl }}/images/logo_tbb.png "Logo TBB")](https://www.threadingbuildingblocks.org/)
 
-*Remarque : dans la philosophie Archlinux, il faudrait créer un PKGBUILD pour réaliser les actions suivantes, mais je ne sais pas faire.*
+*<s>Remarque : dans la philosophie Archlinux, il faudrait créer un PKGBUILD pour réaliser les actions suivantes, mais je ne sais pas faire.</s>*
 
+EDIT du 27/04/2015 : C'est bon, je sais faire un PKGBUILD.
+
+#### Méthode propre avec PKGBUILD
+Le principe est de modifier le PKGBUILD de la version officielle du dépôt [extra/intel-tbb](https://www.archlinux.org/packages/extra/x86_64/intel-tbb/).
+
+- On récupére le [PKGBUILD](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/intel-tbb) original : 
+
+{% highlight bash %}
+# $Id$
+# Maintainer: Stéphane Gaudreault <stephane@archlinux.org>
+# Contributor: Thomas Dziedzic < gostrc at gmail >
+# Contributor: Denis Martinez <deuns.martinez AT gmail.com>
+
+pkgname=intel-tbb
+pkgver=4.3_20150209
+pkgrel=1
+pkgdesc='High level abstract threading library'
+arch=('i686' 'x86_64')
+url='http://www.threadingbuildingblocks.org/'
+license=('GPL')
+depends=('gcc-libs')
+source=("http://threadingbuildingblocks.org/sites/default/files/software_releases/source/tbb${pkgver/\./}oss_src.tgz")
+sha1sums=('cb17bee2a9c98a2b98f3ff16208c1c1fae29e6ab')
+
+build() {
+  cd tbb${pkgver/\./}oss
+  make
+}
+
+package() {
+  cd tbb${pkgver/\./}oss
+  install -d "${pkgdir}"/usr/lib
+  install -m755 build/linux_*/*.so* "${pkgdir}"/usr/lib
+  install -d "${pkgdir}"/usr/include
+  cp -a include/tbb "${pkgdir}"/usr/include
+}
+{% endhighlight %}
+
+- Ensuite, il suffit d'ajouter l'architecture `armv7h` :
+
+{% highlight bash %}
+arch=('i686' 'x86_64' 'armv7h')
+{% endhighlight %}
+
+- Et d'ajouter une règle de compilation pour cette architecture dans la fonction `build`:
+
+{% highlight bash %}
+build() {
+  cd tbb${pkgver/\./}oss
+  [[ "$CARCH" = 'armv7h' ]] && \
+    export CXXFLAGS="-DTBB_USE_GCC_BUILTINS=1 -D__TBB_64BIT_ATOMICS=0"
+  make
+}
+{% endhighlight %}
+
+- Voilà qui est fait. Maintenant, il faut construire le paquet comme on le ferait avec un paquet récupéré sur AUR. On utilise l'outil `makepkg` avec l'option `-s` qui se charge de télécharger les éventuelles dépendances nécessaires :
+
+        $ makepkg -s
+
+- Une fois le paquet construit, on l'installe avec `pacman` :
+
+        $ sudo pacman -U intel-tbb
+
+- Dernière étape, maintenant qu'on a un beau paquet, on le propose au dépôt officiel par le [Github d'ArchlinuxARM](https://github.com/archlinuxarm/PKGBUILDs/pull/1175), parce que c'est ça aussi le logiciel libre :)
+
+#### Méthode manuelle (sale)
 - Téléchargement des sources :
 
         $ cd ~/Downloads
