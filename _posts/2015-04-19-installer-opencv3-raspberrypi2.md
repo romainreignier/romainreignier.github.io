@@ -185,7 +185,7 @@ Avec l'utilisateur `root` et le mot de passe `root`, on peut se connecter, même
 
 - Installation des logiciels utiles, le menu lanceur d'applications `dmenu`, un terminal `rxvt-unicode` et un navigateur `uzbl-browser` :
 
-        $ yaourt -S dmenu urxvt rxvt-unicode uzbl-browser
+        $ yaourt -S dmenu rxvt-unicode uzbl-browser
 
 - Installation de polices :
 
