@@ -327,18 +327,20 @@ Ici, on prend donc `opencv-git` de AUR en modifiant le PKGBUILD selon nos besoin
             -- arch=('i686' 'x86_64')
             ++ arch=('i686' 'x86_64' 'armv7h')
 
-    - Suppression de la dépendance à `intel-tbb` car la version dans les dépôts ne fonctionne pas sur ARM :
+    - EDIT du 30/04/2015 : `intel-tbb` étant maintenant dans les dépôts, cette étape est inutile.
+        <s>Suppression de la dépendance à `intel-tbb` car la version dans les dépôts ne fonctionne pas sur ARM :</s>
 
             -- depends=('gstreamer0.10-base' 'intel-tbb' 'openexr' 'xine-lib' 'libdc1394' 'gtkglext')
             ++ depends=('gstreamer0.10-base' 'openexr' 'xine-lib' 'libdc1394' 'gtkglext')
 
-    - Modification des flags de compilation CMAKE :
+    - EDIT du 30/04/2015 : `intel-tbb` étant maintenant installé normalement, seule la première ligne est nécessaire.  
+        Modification des flags de compilation CMAKE :
 
             ++ '-D ENABLE_NEON=ON'
             ++ '-D TBB_INCLUDE_DIR:PATH=/home/romain/Downloads/tbb43_20150316oss/include'
             ++ '-D TBB_LIB_DIR:PATH=/home/romain/Downloads/tbb43_20150316oss/build/linux_armv7_gcc_cc4.9.2_libc2.20_kernel3.18.11_release'
 
-        *Remarque : les fichiers TBB n'avaient pas encore été placés dans /usr/...les 2 dernières lignes sont peut-être inutiles.*  
+        *<s>Remarque : les fichiers TBB n'avaient pas encore été placés dans /usr/...les 2 dernières lignes sont peut-être inutiles.</s>*  
         [Source](http://stackoverflow.com/questions/7994261/how-do-i-build-opencv-with-tbb)
 
     - Compilation parallèle pour utiliser les 4 coeurs du Raspberry Pi 2 :
