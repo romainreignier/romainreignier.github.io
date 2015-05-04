@@ -215,7 +215,14 @@ Et ajouter les lignes suivantes (ou dé-commenter dans le fichier) :
 
 *<s>Remarque : dans la philosophie Archlinux, il faudrait créer un PKGBUILD pour réaliser les actions suivantes, mais je ne sais pas faire.</s>*
 
-EDIT du 27/04/2015 : C'est bon, je sais faire un PKGBUILD.
+EDIT du 27/04/2015 : C'est bon, je sais faire un PKGBUILD. <s>On va donc écrire notre PKGBUILD pour installer intel-tbb proprement.</s>
+
+EDIT du 30/04/2015 : En fait, [mon PKGBUILD](https://github.com/archlinuxarm/PKGBUILDs/tree/master/extra/intel-tbb) a été ajouté aux [dépôts ArchlinuxARM](http://archlinuxarm.org/packages) donc il suffit de l'installer avec pacman.
+
+#### Installation avec pacman
+Il suffit simplement de la commande :
+
+    $ sudo pacman -S intel-tbb
 
 #### Méthode propre avec PKGBUILD
 Le principe est de modifier le PKGBUILD de la version officielle du dépôt [extra/intel-tbb](https://www.archlinux.org/packages/extra/x86_64/intel-tbb/).
