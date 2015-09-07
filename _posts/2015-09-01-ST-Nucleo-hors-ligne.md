@@ -10,8 +10,9 @@ tags :
 - ubuntu
 ---
 ## Ubuntu
+
 ### Introduction
-[Mbed](https://developer.mbed.org/) est une plateforme de développement pour les microcontrôleurs ARM Cortex-M. Elle propose un compilateur en ligne avec un framework pour faciliter la programmation et la protabilité sur plusieurs plateforme. Le compilateur en ligne permet d'éviter d'installer une toolchain sur son PC mais impose un accès permanent à internet. Il est possible d'exporter les projets de certaines plateformes sous la forme d'un projet pour GNU GCC à base de Makefile. C'est le cas pour les cartes de développement ST Nucleo. Lors de mes derniers essais, seule la compilation pour la carte Nucleo STM32F401 fonctionné directement. Pour les autres testées (F030 et F411), une modification devait être apportée dans le fichier linker.
+[Mbed](https://developer.mbed.org/) est une plateforme de développement pour les microcontrôleurs ARM Cortex-M. Elle propose un compilateur en ligne avec un framework pour faciliter la programmation et la protabilité sur plusieurs plateforme. Le compilateur en ligne permet d'éviter d'installer une toolchain sur son PC mais impose un accès permanent à internet. Il est possible d'exporter les projets de certaines plateformes sous la forme d'un projet pour GNU GCC à base de Makefile. C'est le cas pour les cartes de développement ST Nucleo (testé avec la F030, F401, F411).
 
 ### Ubuntu 15.04
 Avec Ubuntu Vivid 15.04, il suffit d'installer la chaîne de compilation pour processeurs ARM *none*, c'est à dire sans OS ou *bare-metal*.
@@ -48,12 +49,10 @@ Dans le compilateur en ligne, choisir d'exporter le projet au format **GCC (ARM 
 #### OpenOCD
 Pour utiliser l'interface de debogage JTAG/SWD, nous avons besoin d'OpenOCD. La version dans les dépôts ne comprend pas les définitions pour les cartes Nucleo, nous allons donc le compiler à partir des sources.
 
-##### Dépendances
 Vérifier que les dépendances nécessaires sont bien installées
 
     $ sudo apt-get install libtool automake libusb-1.0.0-dev
 
-##### Compilation
 Téléchargement des sources sur Github :
 
     $ git clone https://github.com/ntfreak/openocd
@@ -82,6 +81,7 @@ Le programme STLink vient avec des règles `udev` à installer.
     $ sudo service udev restart
 
 #### Flash du programme
+
 ##### Connexion avec OpenOCD
 On lance OpenOCD avec le fichier de configuration correspondant à notre carte Nucleo.
 
