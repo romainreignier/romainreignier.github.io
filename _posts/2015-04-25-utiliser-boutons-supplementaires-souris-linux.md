@@ -47,7 +47,7 @@ Tout d'abord on installe ces deux utilitaires :
 
 Puis on crée un fichier de configuration pour `xbindkeys` dans notre `$HOME` :
 
-    $ vim ~/.xbindkeysrc 
+    $ vim ~/.xbindkeysrc
 
 Et on y place les lignes suivantes :
 
@@ -63,7 +63,7 @@ Remarque, il existe une interface graphique `xbindkeys` (dépendant de gtk 1, oh
 
 Il ne reste plus qu'à lancer `xbindkeys` pour tester la configuration :
 
-    $ xbinkeys
+    $ xbindkeys
 
 Pour qu'il se lance avec la session, il faut ajouter la ligne suivante au fichier `~/.xinitrc` :
 
