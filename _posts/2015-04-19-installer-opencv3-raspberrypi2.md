@@ -25,13 +25,14 @@ De plus, OpenCV 3 (en version béta à l'heure actuelle) permet l'utilisation de
 L'objectif est alors de compiler OpenCV 3 Béta avec le support de TBB et des instructions Néon pour le [Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) (ARMv7h).
 
 **EDIT du 16/11/15 :**
+
 ### Optimisations NEON
 D'après une navigation rapide dans les [sources d'OpenCV](https://github.com/Itseez/opencv), les modules suivants disposent d'optimisations NEON :
 - Threshold (`modules/imgproc/src/thresh.cpp`) ;
 - Smooth (`modules/imgproc/src/smooth.cpp`) ;
 - Color (`modules/imgproc/src/color.cpp`) ;
 - Corner (`modules/imgproc/src/corner.cpp`) ;
-
+- ... (liste non exhausive)
 
 **Fin de l'EDIT**
 
@@ -329,7 +330,7 @@ Pour utiliser les 4 cœurs de la Raspberry Pi 2, il faut modifier le fichier `/e
 
 	MAKEFLAGS="-j4"
 
-FIN DE L'EDIT
+Fin de l'EDIT
 
 Ici, on prend donc `opencv-git` de AUR en modifiant le PKGBUILD selon nos besoins.
 
