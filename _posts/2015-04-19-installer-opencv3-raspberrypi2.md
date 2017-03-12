@@ -365,7 +365,7 @@ Ici, on prend donc `opencv-git` de AUR en modifiant le PKGBUILD selon nos besoin
         *<s>Remarque : les fichiers TBB n'avaient pas encore été placés dans /usr/...les 2 dernières lignes sont peut-être inutiles.</s>*  
         [Source](http://stackoverflow.com/questions/7994261/how-do-i-build-opencv-with-tbb)
 
-    - Compilation parallèle pour utiliser les 4 coeurs du Raspberry Pi 2 (EDIT du 1604/2016, il ne faut en fait pas spécifier le nombre de cœurs à utiliser dans un PKGBUILD mais plutôt modifier le fichier `/etc/makepkg.conf` comme expliqué dans l'EDIT plus haut) :
+    - Compilation parallèle pour utiliser les 4 coeurs du Raspberry Pi 2 (EDIT du 16/04/2016, il ne faut en fait pas spécifier le nombre de cœurs à utiliser dans un PKGBUILD mais plutôt modifier le fichier `/etc/makepkg.conf` comme expliqué dans l'EDIT plus haut) :
 
             -- make
             ++ make -j4

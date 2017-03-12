@@ -1,8 +1,8 @@
 # Site settings
-title: Notes personnelles de Goligo
+title: Notes personnelles de Romain
 #email: 
 description: > # this means to ignore newlines until "baseurl:"
-    Site personnel me servant de pense-bête en ligne à propos de mes bidouillages électroniques et informatques sur Linux (surtout Archlinux), ROS, Raspberry Pi, Odroid, Arduino, dsPIC, ARM...
+    Site personnel me servant de pense-bête en ligne à propos de mes bidouillages électroniques et informatques sur Linux (surtout Archlinux), ROS, Raspberry Pi, Orange Pi, Odroid, Arduino, STM32, ARM...
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://romainreignier.github.io" # the base hostname & protocol for your site
 twitter_username: goligo50
